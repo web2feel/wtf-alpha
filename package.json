@@ -1,0 +1,28 @@
+{
+  "name": "wtf-alpha",
+  "version": "1.0.0",
+  "description": "A minimal WordPress starter theme with Tailwind CSS v4 and Alpine.js",
+  "scripts": {
+    "build:css": "npx --yes @tailwindcss/cli@latest -i ./src/css/main.css -o ./assets/css/style.css --minify",
+    "build:js": "npx --yes esbuild@latest src/js/main.js --bundle --minify --outfile=assets/js/main.js",
+    "build": "npm run build:css && npm run build:js",
+    "watch:css": "npx --yes @tailwindcss/cli@latest -i ./src/css/main.css -o ./assets/css/style.css --watch",
+    "watch:js": "npx --yes esbuild@latest src/js/main.js --bundle --outfile=assets/js/main.js --watch",
+    "watch": "npm run watch:css & npm run watch:js",
+    "export": "npm run build && node build-export.js",
+    "version": "node update-version.js"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "tailwindcss",
+    "alpinejs",
+    "esbuild"
+  ],
+  "author": "Jinson <https://web2feel.com>",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "alpinejs": "^3.14.0",
+    "tailwindcss": "^4.1.14"
+  }
+}
