@@ -38,6 +38,7 @@ const excludeItems = [
   // Uncomment below to exclude developer documentation from production
    'SETUP.md',
    'VERSIONING.md',
+   'ALPINE-CDN-SETUP.md',
   // 'README.md',
 ];
 
