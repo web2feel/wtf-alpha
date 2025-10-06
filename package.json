@@ -8,7 +8,7 @@
     "build": "npm run build:css && npm run build:js",
     "watch:css": "npx --yes @tailwindcss/cli@latest -i ./src/css/main.css -o ./assets/css/style.css --watch",
     "watch:js": "npx --yes esbuild@latest src/js/main.js --bundle --outfile=assets/js/main.js --watch",
-    "watch": "npm run watch:css & npm run watch:js",
+    "watch": "npx --yes npm-run-all --parallel watch:css watch:js",
     "export": "npm run build && node build-export.js",
     "version": "node update-version.js"
   },
@@ -22,7 +22,9 @@
   "author": "Jinson <https://web2feel.com>",
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "alpinejs": "^3.14.0",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }

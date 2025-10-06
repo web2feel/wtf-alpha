@@ -36,7 +36,6 @@ get_header();
                         'mid_size'  => 2,
                         'prev_text' => __('&larr; Previous', 'wtf-alpha'),
                         'next_text' => __('Next &rarr;', 'wtf-alpha'),
-                        'class'     => 'pagination flex justify-center space-x-2 mt-8',
                     ));
 
                 else :

@@ -100,7 +100,19 @@ function wtf_alpha_scripts() {
         $theme_version
     );
     
-    // Enqueue JS
+    // Enqueue Alpine.js from CDN
+    wp_enqueue_script(
+        'alpinejs',
+        'https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js',
+        array(),
+        '3.14.0',
+        true
+    );
+    
+    // Add defer attribute to Alpine.js
+    add_filter('script_loader_tag', 'wtf_alpha_defer_alpinejs', 10, 2);
+    
+    // Enqueue custom JS
     wp_enqueue_script(
         'wtf-alpha-script',
         get_template_directory_uri() . '/assets/js/main.js',
@@ -117,6 +129,16 @@ function wtf_alpha_scripts() {
 add_action('wp_enqueue_scripts', 'wtf_alpha_scripts');
 
 /**
+ * Add defer attribute to Alpine.js script
+ */
+function wtf_alpha_defer_alpinejs($tag, $handle) {
+    if ('alpinejs' === $handle) {
+        return str_replace(' src', ' defer src', $tag);
+    }
+    return $tag;
+}
+
+/**
  * Custom navigation walker for Tailwind CSS
  */
 require get_template_directory() . '/inc/class-tailwind-nav-walker.php';
@@ -130,3 +152,17 @@ require get_template_directory() . '/inc/template-tags.php';
  * Theme customizer
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Add custom classes to post navigation and pagination
+ */
+function wtf_alpha_post_navigation_classes($template, $class) {
+    if (strpos($class, 'post-navigation') !== false) {
+        $template = '<nav class="post-navigation flex justify-between my-8" aria-label="%4$s">%3$s</nav>';
+    }
+    if (strpos($class, 'pagination') !== false) {
+        $template = '<nav class="pagination flex justify-center space-x-2 mt-8" aria-label="%4$s">%3$s</nav>';
+    }
+    return $template;
+}
+add_filter('navigation_markup_template', 'wtf_alpha_post_navigation_classes', 10, 2);

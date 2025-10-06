@@ -21,7 +21,6 @@ get_header();
                     the_post_navigation(array(
                         'prev_text' => '<span class="nav-subtitle">' . esc_html__('Previous:', 'wtf-alpha') . '</span> <span class="nav-title">%title</span>',
                         'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'wtf-alpha') . '</span> <span class="nav-title">%title</span>',
-                        'class'     => 'post-navigation flex justify-between my-8',
                     ));
 
                     // If comments are open or there's at least one comment

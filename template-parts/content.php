@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -12,7 +13,7 @@
         if (is_singular()) :
             the_title('<h1 class="entry-title text-4xl font-bold mb-4">', '</h1>');
         else :
-            the_title('<h2 class="entry-title text-2xl font-bold mb-2"><a href="' . esc_url(get_permalink()) . '" class="hover:text-blue-600 transition">', '</a></h2>');
+            the_title('<h2 class="entry-title text-3xl font-bold mb-2 break-all"><a href="' . esc_url(get_permalink()) . '" class="hover:text-blue-600 transition">', '</a></h2>');
         endif;
         ?>
 
@@ -38,11 +39,11 @@
             the_content();
         else :
             the_excerpt();
-            ?>
-            <a href="<?php the_permalink(); ?>" class="inline-block mt-2 text-blue-600 hover:text-blue-800 font-semibold">
+        ?>
+            <!-- <a href="<?php the_permalink(); ?>" class="inline-block mt-2 text-blue-600 hover:text-blue-800 font-semibold">
                 <?php esc_html_e('Read more &rarr;', 'wtf-alpha'); ?>
-            </a>
-            <?php
+            </a> -->
+        <?php
         endif;
 
         wp_link_pages(array(
@@ -52,7 +53,7 @@
         ?>
     </div>
 
-    <footer class="entry-footer mt-4">
+    <footer class="entry-footer mt-4 flex">
         <?php wtf_alpha_entry_footer(); ?>
     </footer>
 </article>
