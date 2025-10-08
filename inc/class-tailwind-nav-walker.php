@@ -21,7 +21,7 @@ class WTF_Alpha_Tailwind_Nav_Walker extends Walker_Nav_Menu
         $indent = str_repeat($t, $depth);
 
         // Base classes for submenu
-        $classes = array('sub-menu', 'bg-white', 'shadow-lg', 'py-0', 'min-w-64');
+        $classes = array('sub-menu', 'bg-white', 'shadow-lg', 'py-0', 'min-w-48');
 
         // Positioning based on depth - handled by CSS but add z-index
         if ($depth === 0) {

@@ -8,7 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('overflow-x-hidden'); ?>>
     <?php wp_body_open(); ?>
 
     <div id="page" class="min-h-screen flex flex-col">

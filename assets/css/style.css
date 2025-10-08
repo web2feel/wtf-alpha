@@ -393,6 +393,9 @@
   .max-w-none {
     max-width: none;
   }
+  .min-w-48 {
+    min-width: calc(var(--spacing) * 48);
+  }
   .min-w-64 {
     min-width: calc(var(--spacing) * 64);
   }
@@ -427,6 +430,9 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .items-baseline {
+    align-items: baseline;
   }
   .items-center {
     align-items: center;
@@ -479,6 +485,12 @@
       margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
     }
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -617,6 +629,9 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .break-words {
+    overflow-wrap: break-word;
   }
   .break-all {
     word-break: break-all;
@@ -1104,18 +1119,18 @@ body {
 }
 .menu-item-has-children > .sub-menu {
   pointer-events: none;
-  visibility: hidden;
   position: absolute;
+  left: -9999px;
   opacity: 0%;
-  transition-property: all;
+  transition-property: opacity;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 200ms;
-  transition-duration: 200ms;
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
 }
 .menu-item-has-children:hover > .sub-menu {
   pointer-events: auto;
-  visibility: visible;
+  left: calc(var(--spacing) * 0);
   opacity: 100%;
 }
 .menu > .menu-item-has-children > .sub-menu {

@@ -53,7 +53,7 @@
         ?>
     </div>
 
-    <footer class="entry-footer mt-4 flex">
+    <footer class="entry-footer mt-4 flex flex-wrap gap-4 break-words">
         <?php wtf_alpha_entry_footer(); ?>
     </footer>
 </article>

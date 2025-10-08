@@ -253,11 +253,11 @@ body {
 }
 
 .menu-item-has-children > .sub-menu {
-  @apply absolute opacity-0 invisible pointer-events-none transition-all duration-200;
+  @apply absolute opacity-0 left-[-9999px] pointer-events-none transition-opacity duration-300;
 }
 
 .menu-item-has-children:hover > .sub-menu {
-  @apply opacity-100 visible pointer-events-auto;
+  @apply opacity-100 left-0 pointer-events-auto;
 }
 
 /* First level submenu positioning */
