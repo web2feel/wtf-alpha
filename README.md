@@ -86,6 +86,29 @@ This will:
 
 The zip file is ready to be uploaded to any WordPress site or theme directory.
 
+### Export with Custom Theme Name
+
+Create a production build with a renamed theme name and namespace:
+
+```bash
+npm run export:rename
+```
+
+This interactive tool will:
+1. Prompt you for a new theme name
+2. Build all assets
+3. Create a renamed copy of the theme
+4. Replace all theme names, namespaces, and text domains
+5. Create a zip file ready for distribution
+
+**Example:** Rename "WTF Alpha" to "My Corporate Theme" - the tool automatically converts this to all necessary formats:
+- Text domain: `my-corporate-theme`
+- Function prefix: `my_corporate_theme_`
+- Namespace: `My_Corporate_Theme`
+- Theme name: `My Corporate Theme`
+
+Your original theme files remain unchanged. See [RENAMING.md](RENAMING.md) for detailed documentation.
+
 ## Project Structure
 
 ```
@@ -175,6 +198,7 @@ The theme includes support for:
 - `npm run watch:js` - Watch JS files only
 - `npm run version <version>` - Update theme version (e.g., `npm run version 1.1.0`)
 - `npm run export` - Build and create distribution zip file
+- `npm run export:rename` - Build and create renamed theme distribution (interactive)
 
 ## Browser Support
 

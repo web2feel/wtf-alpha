@@ -10,6 +10,7 @@
     "watch:js": "npx --yes esbuild@latest src/js/main.js --bundle --outfile=assets/js/main.js --watch",
     "watch": "npx --yes npm-run-all --parallel watch:css watch:js",
     "export": "npm run build && node build-export.js",
+    "export:rename": "node build-rename.js",
     "version": "node update-version.js"
   },
   "keywords": [
